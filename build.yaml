@@ -1,0 +1,10 @@
+# Cấu hình sinh mã dùng chung (freezed + json_serializable).
+# JSON của API dùng snake_case cho mọi field (D05, CLAUDE.md B5): áp dụng toàn cục thay vì
+# lặp @JsonSerializable(fieldRename: FieldRename.snake) trên từng model.
+targets:
+  $default:
+    builders:
+      json_serializable:
+        options:
+          field_rename: snake
+          explicit_to_json: true
